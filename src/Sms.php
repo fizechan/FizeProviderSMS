@@ -1,15 +1,29 @@
 <?php
+
+namespace fize\provider\sms;
+
 /**
- * Created by PhpStorm.
- * User: cfz87
- * Date: 2018-05-25
- * Time: 17:29
+ * 短信
  */
-
-namespace fize\tool\sms;
-
-
 class Sms
 {
+    /**
+     * @var SmsHandler
+     */
+    private static $handler;
 
+    /**
+     * 取得单例
+     * @param string $handler 使用的实际接口名称
+     * @param array $config 接口参数
+     * @return SmsHandler
+     */
+    public static function getInstance($handler, array $config = null)
+    {
+        if (empty(self::$handler)) {
+            $class = '\\' . __NAMESPACE__ . '\\handler\\' . $handler;
+            self::$handler = new $class($config);
+        }
+        return self::$handler;
+    }
 }
