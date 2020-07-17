@@ -1,24 +1,24 @@
 {
-  "name": "fize/provider-sms",
-  "description": "短信发送库",
-  "license": "MIT",
   "authors": [
     {
       "name": "FizeChan",
       "email": "chenfengzhan@qq.com"
     }
   ],
+  "autoload": {
+    "psr-4": {
+      "fize\\provider\\sms\\": "src"
+    }
+  },
+  "description": "短信发送库",
+  "license": "MIT",
+  "name": "fize/provider-sms",
   "require": {
     "php": ">=5.4.0",
     "fize/crypt": "~3.2",
     "alibabacloud/client": "~1.5"
   },
   "require-dev": {
-    "phpunit/phpunit": "^8.0.0"
-  },
-  "autoload": {
-    "psr-4": {
-      "fize\\provider\\sms\\": "src"
-    }
+    "phpunit/phpunit": "~9.2.6"
   }
 }
