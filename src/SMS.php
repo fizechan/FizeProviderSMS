@@ -1,11 +1,11 @@
 <?php
 
-namespace fize\provider\sms;
+namespace Fize\Provider\SMS;
 
 /**
  * 短信
  */
-class Sms
+class SMS
 {
     /**
      * @var SmsHandler

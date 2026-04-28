@@ -1,12 +1,12 @@
 <?php
 
 
-namespace fize\provider\sms;
+namespace Fize\Provider\SMS;
 
 /**
  * 接口：短信
  */
-interface SmsHandler
+interface SMSHandler
 {
     /**
      * 发送短信
