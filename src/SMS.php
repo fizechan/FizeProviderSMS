@@ -8,7 +8,7 @@ namespace Fize\Provider\SMS;
 class SMS
 {
     /**
-     * @var SmsHandler
+     * @var SMSHandler
      */
     private static $handler;
 
@@ -16,12 +16,12 @@ class SMS
      * 取得单例
      * @param string $handler 使用的实际接口名称
      * @param array $config 接口参数
-     * @return SmsHandler
+     * @return SMSHandler
      */
     public static function getInstance($handler, array $config = null)
     {
         if (empty(self::$handler)) {
-            $class = '\\' . __NAMESPACE__ . '\\handler\\' . $handler;
+            $class = '\\' . __NAMESPACE__ . '\\Handler\\' . $handler;
             self::$handler = new $class($config);
         }
         return self::$handler;

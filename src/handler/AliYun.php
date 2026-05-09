@@ -1,17 +1,16 @@
 <?php
 
 
-namespace fize\provider\sms\handler;
+namespace Fize\Provider\SMS\Handler;
 
-use RuntimeException;
 use AlibabaCloud\Client\AlibabaCloud;
-use fize\crypt\Json;
-use fize\provider\sms\SmsHandler;
+use Fize\Provider\SMS\SMSHandler;
+use RuntimeException;
 
 /**
  * 阿里云
  */
-class AliYun implements SmsHandler
+class AliYun implements SMSHandler
 {
 
     /**
@@ -46,7 +45,7 @@ class AliYun implements SmsHandler
             'TemplateCode' => $template_code
         ];
         if ($template_param) {
-            $query['TemplateParam'] = Json::encode($template_param);
+            $query['TemplateParam'] = json_encode($template_param);
         }
 
         $response = AlibabaCloud::rpcRequest()
